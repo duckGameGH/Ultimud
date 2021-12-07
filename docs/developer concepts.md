@@ -1,7 +1,7 @@
 # Developer Concepts:
 ## General:
 - browser based
-- made with python
+- made with html/css/javascript
 - the game is essentially also serving as a chat room
 - the world is made up of rooms. technically speaking, even just being in a city is a room, of which every building is just another room, so rooms, inside rooms, inside rooms, although I like to use the Region->area->local->room heirarchy.
 - Properties of a room are Players, Monsters, NPCS, Static Objects(signs, statues), Dynamic objects(loot, chests, storable items), Connected rooms(including exits), and Monster encounter chance

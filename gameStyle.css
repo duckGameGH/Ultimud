@@ -1,0 +1,109 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;}
+
+  /* Preferred box-sizing value */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;}
+
+  /*
+    Remove list styles (bullets/numbers)
+    in case you use it with normalize.css */
+
+  ol, ul {
+    list-style: none;}
+
+  /* For images to not be able to exceed their container */
+  img {
+    max-width: 100%;}
+
+  /* Removes spacing between cells in tables */
+  table {
+    border-collapse: collapse;}
+
+  /* Revert the 'white-space' property for textarea elements on Safari */
+  textarea {
+    white-space: revert;}
+
+#mainCont{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;}
+
+#infoMainCont{
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(68, 68, 68));
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;}
+
+.infoSubConts{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#health{background-color: rgb(172, 50, 50);}
+
+#mana{background-color: rgb(35, 78, 196);}
+
+#energy{background-color: rgb(70, 172, 50);}
+
+#roomInfoMainCont{
+    display: flex;
+    background-image: linear-gradient(rgb(90, 90, 131), rgb(41, 41, 41));
+    flex-direction: row;
+    width: 100%;
+    height: 100%;}
+
+.roomInfoHeaders{
+    text-align: center;
+    width: 100%}
+  
+.roomInfoSubConts{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    width: 100%;
+    height: 100%;}
+
+#inventoryMainCont{
+    display: none;
+    background-image: linear-gradient(rgb(90, 90, 131), rgb(41, 41, 41));
+    flex-direction: row;
+    width: 100%;
+    height: 100%;}
+
+.inventoryHeaders{
+    text-align: center;
+    width: 100%}
+
+.inventorySubConts{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#ioMainCont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#mainOutput{
+    background-image: linear-gradient(grey, rgb(65, 65, 65));
+    border-top: 1px solid black;;
+    resize: none;
+    height: 100%;}
+
+#mainInput{
+    background-image: linear-gradient(rgb(214, 214, 214), rgb(116, 116, 116));
+    height: 8%;
+    border-top: 2px solid black;}

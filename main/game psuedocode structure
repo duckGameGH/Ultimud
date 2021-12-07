@@ -62,6 +62,8 @@ value
 functions
 ==========================
 user command input
+user join game
+player say/shout
 room event to output
 creature attack
 cast spell

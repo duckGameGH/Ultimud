@@ -1,0 +1,108 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;}
+
+  /* Preferred box-sizing value */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;}
+
+  /*
+    Remove list styles (bullets/numbers)
+    in case you use it with normalize.css */
+
+  ol, ul {
+    list-style: none;}
+
+  /* For images to not be able to exceed their container */
+  img {
+    max-width: 100%;}
+
+  /* Removes spacing between cells in tables */
+  table {
+    border-collapse: collapse;}
+
+  /* Revert the 'white-space' property for textarea elements on Safari */
+  textarea {
+    white-space: revert;}
+
+#cont_parent{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;}
+
+#info_cont{
+    background-color: rgb(118, 148, 118);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;}
+
+.info_column_conts{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#health{background-color: rgb(172, 50, 50);}
+
+#mana{background-color: rgb(35, 78, 196);}
+
+#energy{background-color: rgb(70, 172, 50);}
+
+#roomInfo_cont{
+    display: flex;
+    background-color: rgb(165, 161, 128);
+    flex-direction: row;
+    width: 100%;
+    height: 100%;}
+
+.roomInfo_headers{
+    text-align: center;
+    width: 100%}
+  
+.roomInfo_column_conts{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#inventory_cont{
+    display: none;
+    background-color: rgb(165, 161, 128);
+    flex-direction: row;
+    width: 100%;
+    height: 100%;}
+
+.inventory_headers{
+    text-align: center;
+    width: 100%}
+
+.inventory_column_conts{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#i_o_cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;}
+
+#main_output{
+    background-color: rgb(118, 148, 146);
+    border-top: 1px solid black;;
+    resize: none;
+    height: 100%;}
+
+#main_input{
+    background-color: rgb(161, 143, 143);
+    border-top: 2px solid black;}

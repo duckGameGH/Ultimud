@@ -3,9 +3,13 @@
     flex-direction: row;
     background-image: linear-gradient(to right,rgb(143, 143, 143), rgb(77, 77, 77));
     height: 1000px;
-    width: 900px;}
+    width: 1100px;}
 
-#firstColumnCont{
+#column1MainCont{
+    display: flex;
+    flex-direction: column;}
+
+#column1MainCont{
     display: flex;
     flex-direction: column;}
 
@@ -40,3 +44,35 @@
     border: 1px solid black;
     width: 300px;
     height: 240px;}
+
+.userInfoDetails{
+    color: rgb(0, 255, 0);}
+
+.characterDetails{
+    color: rgb(0, 255, 0);}
+
+#ioCont{
+    display: flex;
+    flex-direction: column;}
+
+#outputMain{
+    background-color: rgb(118, 180, 182);}
+
+#inputMain{
+    width: 720px;}
+
+#roomInfoCont{
+    display: flex;
+    flex-direction: row;}
+
+.roomInfoList{
+    border: 1px solid black;
+    max-width: 140px;
+    min-width: 140px;
+    min-height: 150px;
+    max-height: 150px;
+    overflow: auto;}
+
+.roomInfoListItem{
+    color: rgb(0, 255, 0)}
+

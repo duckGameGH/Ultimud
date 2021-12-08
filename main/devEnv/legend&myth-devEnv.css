@@ -1,0 +1,42 @@
+#mainCont{
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to right,rgb(143, 143, 143), rgb(77, 77, 77));
+    height: 1000px;
+    width: 900px;}
+
+#firstColumnCont{
+    display: flex;
+    flex-direction: column;}
+
+#userLoginCont{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;}
+
+#userRegisterCont{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    height: 280px;}
+
+#charactersCont{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    height: 160px;}
+
+#createCharacterCont{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    height: 240px;}

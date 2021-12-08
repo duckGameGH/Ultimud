@@ -2,51 +2,49 @@
     display: flex;
     flex-direction: row;
     background-image: linear-gradient(to right,rgb(143, 143, 143), rgb(77, 77, 77));
-    height: 1000px;
-    width: 1100px;}
-
-#column1MainCont{
-    display: flex;
-    flex-direction: column;}
+    height: 100vh;
+    width: 100vw;}
 
 #column1MainCont{
     display: flex;
     flex-direction: column;}
 
 #userLoginCont{
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 300px;
-    height: 200px;}
+    height: 190px;}
 
 #userRegisterCont{
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 300px;
-    height: 280px;}
+    height: 260px;}
 
 #charactersCont{
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 300px;
-    height: 160px;}
+    height: 140px;}
 
 #createCharacterCont{
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 300px;
-    height: 240px;}
+    height: 230px;}
+
+#column2MainCont{
+    display: flex;
+    flex-direction: column;}
+
+#userInfoCont{
+    min-width: 600px;}
 
 .userInfoDetails{
     color: rgb(0, 255, 0);}
+
+#characterInfoCont{
+    min-width: 600px;}
 
 .characterDetails{
     color: rgb(0, 255, 0);}
@@ -56,23 +54,71 @@
     flex-direction: column;}
 
 #outputMain{
-    background-color: rgb(118, 180, 182);}
+    background-color: rgb(0, 0, 0);
+    color: white;
+    resize: none;
+    overflow-y: auto;}
 
 #inputMain{
-    width: 720px;}
+    background-color: black;
+    color: white;}
+
+#dialogueCont{
+    display: flex;
+    flex-direction: column;}
+
+#outputDialogue{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    resize: none;
+    overflow-y: auto;}
 
 #roomInfoCont{
     display: flex;
     flex-direction: row;}
 
 .roomInfoList{
-    border: 1px solid black;
-    max-width: 140px;
-    min-width: 140px;
-    min-height: 150px;
-    max-height: 150px;
-    overflow: auto;}
+    max-height: 90px;
+    overflow-y: auto;}
 
 .roomInfoListItem{
     color: rgb(0, 255, 0)}
 
+#column3MainCont{
+    display: flex;
+    flex-direction: column;}
+
+#inventoryCont{
+    display: flex;
+    flex-direction: row;}
+
+#characterInventory{
+    height: 150px;
+    max-height: 150px;
+    overflow-y: auto;}
+
+.inventoryItem{
+    color: rgb(0, 255, 0);}
+
+#battleCont{
+    display: flex;
+    flex-direction: column;}
+
+#battleLists{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    max-height: 150px;
+    overflow-y: auto;}
+
+#outputBattle{
+    background-color: black;
+    color: white;
+    resize: none;
+    overflow-y: auto;}
+
+.battleAlly{
+    color: rgb(0, 255, 0);}
+
+.battleEnemy{
+    color: rgb(0, 255, 0);}

@@ -34,7 +34,6 @@
                     <select name="" id=""></select>
                     <button>Go Forth</button>
                     <button>Create Character</button>
-                    <button>Delete Character</button>
                 </div>
 
                 <div id="createCharacterCont">
@@ -59,7 +58,7 @@
             </div>
 
             <div id="column2MainCont">
-                <div id="userInfo">
+                <div id="userInfoCont">
                     <label for="userUsername">Username:</label>
                     <span class="userInfoDetails" id="userUsername">none</span>
                     <label for="userEmail">Email:</label>
@@ -68,7 +67,7 @@
                     <span class="userInfoDetails" id="userPassword">none</span>
                 </div>
 
-                <div id="characterInfo">
+                <div id="characterInfoCont">
                     <label for="characterName">Name:</label>
                     <span class="characterDetails" id="characterName">none</span>
                     <label for="characterRace">Race:</label>
@@ -81,15 +80,7 @@
                     <span class="characterDetails" id="characterExperience">none</span>
                 </div>
 
-                <div id="ioCont">
-                    <p>Input and Output</p>
-                    <textarea readonly name="" id="outputMain" cols="90" rows="20" style="resize: none;"></textarea>
-                    <input id="inputMain" type="text">
-                </div>
-
-                <div id="roomInfoLabel"></div>
                 <div id="roomInfoCont">
-                    
                     <ul class="roomInfoList" id="enemiesList">Enemies
                         <li class="roomInfoListItem">enemy</li>
                         <li class="roomInfoListItem">enemy</li>
@@ -113,6 +104,45 @@
                         <li class="roomInfoListItem">players</li>
                         <li class="roomInfoListItem">players</li>
                     </ul>
+                </div>
+
+                <div id="ioCont">
+                    <p>Input and Output</p>
+                    <textarea readonly name="" id="outputMain" cols="70" rows="19"></textarea>
+                    <input id="inputMain" type="text">
+                </div>
+
+                <div id="dialogueCont">
+                    <p>Dialogue</p>
+                    <textarea readonly name="" id="outputDialogue" cols="70" rows="19"></textarea>
+                </div>
+            </div>
+
+            <div id="column3MainCont">
+                <div id="inventoryCont">
+                    <ul id="characterInventory">Inventory
+                        <li class="inventoryItem">item</li>
+                        <li class="inventoryItem">item</li>
+                        <li class="inventoryItem">item</li>
+                    </ul>
+                </div>
+
+                <div id="battleCont">
+                    <span>Battle</span>
+                    <div id="battleLists">
+                        <ul id="battleAllyList">Allies
+                            <li class="battleAlly">ally</li>
+                            <li class="battleAlly">ally</li>
+                            <li class="battleAlly">ally</li>
+                        </ul>
+
+                        <ul id="battleEnemyList">Enemies
+                            <li class="battleEnemy">enemy</li>
+                            <li class="battleEnemy">enemy</li>
+                            <li class="battleEnemy">enemy</li>
+                        </ul>
+                    </div>
+                    <textarea name="" id="outputBattle" cols="70" rows="20"></textarea>
                 </div>
             </div>
         </div>

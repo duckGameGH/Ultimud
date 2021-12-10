@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="devEnv.css">
+    </head>
+    <body>
+        <div id="mainCont">
+            <div id="column1MainCont">
+                <div id="userLoginCont">
+                    <p style="text-align: center;">User Login</p>
+                    <span>Username:</span>
+                    <input id="userRegisterUsername" type="text">
+                    <span>Password:</span>
+                    <input id="userRegisterPassword" type="text">
+                    <button>Login</button>
+                    <button>Logout</button>
+                </div>
+
+                <div id="userRegisterCont">
+                    <p style="text-align: center;">Register User</p>
+                    <span>Username:</span>
+                    <input id="userRegisterUsername" type="text">
+                    <span>Email:</span>
+                    <input id="userRegisterEmail" type="text">
+                    <span>Password:</span>
+                    <input id="userRegisterPassword" type="text">
+                    <span>Confirm Password:</span>
+                    <input id="userRegisterConfirmPassword" type="text">
+                    <button>Register</button>
+                </div>
+
+                <div id="charactersCont">
+                    <p style="text-align: center;">Character Selection</p>
+                    <select name="" id=""></select>
+                    <button>Go Forth</button>
+                    <button>Create Character</button>
+                </div>
+
+                <div id="createCharacterCont">
+                    <p style="text-align: center;">Create Character</p>
+                    <span>Race:</span>
+                    <select name="" id="">
+                        <option value="">Human</option>
+                        <option value="">Elf</option>
+                        <option value="">Dwarf</option>
+                        <option value="">Halfling</option>
+                        <option value="">Half-giant</option>
+                    </select>
+                    <span>Gender:</span>
+                    <select name="" id="">
+                        <option value="">Male</option>
+                        <option value="">Female</option>
+                    </select>
+                    <span>Name:</span>
+                    <input id="userRegisterPassword" type="text">
+                    <button>Finish</button>
+                </div>
+            </div>
+
+            <div id="column2MainCont">
+                <div id="userInfoCont">
+                    <label for="userUsername">Username:</label>
+                    <span class="userInfoDetails" id="userUsername">none</span>
+                    <label for="userEmail">Email:</label>
+                    <span class="userInfoDetails" id="userEmail">none</span>
+                    <label for="userPassword">Password:</label>
+                    <span class="userInfoDetails" id="userPassword">none</span>
+                </div>
+
+                <div id="characterInfoCont">
+                    <label for="characterName">Name:</label>
+                    <span class="characterDetails" id="characterName">none</span>
+                    <label for="characterRace">Race:</label>
+                    <span class="characterDetails" id="characterRace">none</span>
+                    <label for="characterGender">Gender:</label>
+                    <span class="characterDetails" id="characterGender">none</span>
+                    <label for="characterLevel">Level:</label>
+                    <span class="characterDetails" id="characterLevel">none</span>
+                    <label for="characterExperience">Experience:</label>
+                    <span class="characterDetails" id="characterExperience">none</span>
+                </div>
+
+                <div id="roomInfoCont">
+                    <ul class="roomInfoList" id="enemiesList">Enemies
+                        <li class="roomInfoListItem">enemy</li>
+                        <li class="roomInfoListItem">enemy</li>
+                        <li class="roomInfoListItem">enemy</li>
+                    </ul>
+
+                    <ul class="roomInfoList" id="npcsList">Npcs
+                        <li class="roomInfoListItem">npc</li>
+                        <li class="roomInfoListItem">npc</li>
+                        <li class="roomInfoListItem">npc</li>
+                    </ul>
+
+                    <ul class="roomInfoList" id="objectsList">Objects
+                        <li class="roomInfoListItem">object</li>
+                        <li class="roomInfoListItem">object</li>
+                        <li class="roomInfoListItem">object</li>
+                    </ul>
+
+                    <ul class="roomInfoList" id="playersList">Players
+                        <li class="roomInfoListItem">players</li>
+                        <li class="roomInfoListItem">players</li>
+                        <li class="roomInfoListItem">players</li>
+                    </ul>
+                </div>
+
+                <div id="ioCont">
+                    <p>Input and Output</p>
+                    <textarea readonly name="" id="outputMain" cols="70" rows="19"></textarea>
+                    <input id="inputMain" type="text">
+                </div>
+
+                <div id="dialogueCont">
+                    <p>Dialogue</p>
+                    <textarea readonly name="" id="outputDialogue" cols="70" rows="19"></textarea>
+                </div>
+            </div>
+
+            <div id="column3MainCont">
+                <div id="inventoryCont">
+                    <ul id="characterInventory">Inventory
+                        <li class="inventoryItem">item</li>
+                        <li class="inventoryItem">item</li>
+                        <li class="inventoryItem">item</li>
+                    </ul>
+                </div>
+
+                <div id="battleCont">
+                    <span>Battle</span>
+                    <div id="battleLists">
+                        <ul id="battleAllyList">Allies
+                            <li class="battleAlly">ally</li>
+                            <li class="battleAlly">ally</li>
+                            <li class="battleAlly">ally</li>
+                        </ul>
+
+                        <ul id="battleEnemyList">Enemies
+                            <li class="battleEnemy">enemy</li>
+                            <li class="battleEnemy">enemy</li>
+                            <li class="battleEnemy">enemy</li>
+                        </ul>
+                    </div>
+                    <textarea name="" id="outputBattle" cols="70" rows="20"></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

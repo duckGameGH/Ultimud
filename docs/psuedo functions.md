@@ -1,4 +1,4 @@
-#Psuedo Functions
+# Psuedo Functions
 - user command input
 - user join game
 - move

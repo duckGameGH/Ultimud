@@ -1,0 +1,103 @@
+#contMain{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#contBanner{
+    background-image: radial-gradient(grey, black);
+    color: rgb(0, 255, 0);
+    font-size: 40px;
+    text-align: center;
+}
+
+#contBody{
+    background-image: linear-gradient(grey, black);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#contGame{
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: 3px solid black;
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    max-height: 700px;
+}
+
+#contInfo{
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    max-height: 90px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#contActivePane{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#contIO{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#outputMain{
+    background-color: rgb(35, 35, 35);
+    resize: none;
+    height: 100%;
+    color: white;
+    border: 1px solid grey;
+}
+
+#inputMain{
+    background-color: rgb(35, 35, 35);;
+    color: white;
+    border: 1px solid grey;
+    font-size: 18px;
+}
+
+#contInfoC1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#contInfoC2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#contInfoC3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}

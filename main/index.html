@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Legend & Myth</title>
+        
+        <style>
+            #contMain{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            }
+            
+            #contBanner{
+                background-image: radial-gradient(grey, black);
+                color: rgb(0, 255, 0);
+                font-size: 40px;
+                text-align: center;
+            }
+
+            #contBody{
+                background-image: linear-gradient(grey, black);
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+            }
+
+            #contGame{
+                background-color: grey;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                border: 3px solid black;
+                width: 100%;
+                height: 100%;
+                max-width: 700px;
+                max-height: 700px;
+            }
+
+            #contInfo{
+                background-color: grey;
+                display: flex;
+                flex-direction: row;
+                color: black;
+                width: 100%;
+                height: 100%;
+                max-height: 90px;
+                box-sizing: border-box;
+                border: 1px solid black;
+            }
+
+            #contActivePane{
+                display: flex;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 1px solid black;
+            }
+
+            #contIO{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 1px solid black;
+            }
+
+            #outputMain{
+                background-color: rgb(35, 35, 35);
+                resize: none;
+                height: 100%;
+                color: white;
+                border: 1px solid grey;
+            }
+
+            #inputMain{
+                background-color: rgb(35, 35, 35);;
+                color: white;
+                border: 1px solid grey;
+                font-size: 18px;
+            }
+
+            #contInfoC1{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+            #contInfoC2{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+            #contInfoC3{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="contMain">
+            <div id="contBanner">Legend & Myth</div>
+            <div id="contBody">
+                <div id="contGame">
+                    <div id="contInfo">
+                        <div id="contInfoC1">
+                            <span>Year</span>
+                            <span>Month</span>
+                            <span>Day/Night</span>
+                        </div>
+                        <div id="contInfoC2">
+                            <span>Region</span>
+                            <span>Area</span>
+                            <span>Local</span>
+                            <span>Room</span>
+                        </div>
+                        <div id="contInfoC3">
+                            <span>Health</span>
+                            <span>Energy</span>
+                            <span>Mana</span>
+                        </div>
+                    </div>
+
+                    <div id="contActivePane"></div>
+
+                    <div id="contIO">
+                        <div id="outputMain"></div>
+                        </textarea>
+                        <input id="inputMain" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            
+            const loginRegister = {text:"Welcome to Legend and Myth.", option1:"Login", option2:"Register"};
+            
+            var currentOptionsState = loginRegister
+
+            function printOptionsState() {
+                document.getElementById("outputMain").innerHTML += currentOptionsState.text + "<br><br>";
+
+                var i = 0
+                for (x in currentOptionsState){
+                    if(i >= 1){
+                        document.getElementById("outputMain").innerHTML += i + ". ";
+                        document.getElementById("outputMain").innerHTML += currentOptionsState[x] + "<br>";
+                    }
+                    i++;
+                }
+            }
+
+            printOptionsState();
+
+        </script>
+
+    </body>
+</html>

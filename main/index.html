@@ -1,8 +1,10 @@
+<!--abbreviations legend at the bottom of this file-->
 <!DOCTYPE html>
 <html>
     <head>
         <title>Legend & Myth</title>
-        
+
+        <!-- css code -->
         <style>
             #contMain{
             display: flex;
@@ -111,6 +113,7 @@
         </style>
     </head>
 
+    <!-- html code-->
     <body>
         <div id="contMain">
             <div id="contBanner">Legend & Myth</div>
@@ -118,20 +121,20 @@
                 <div id="contGame">
                     <div id="contInfo">
                         <div id="contInfoC1">
-                            <span>Year</span>
-                            <span>Month</span>
-                            <span>Day/Night</span>
+                            <text>Year</text>
+                            <text>Month</text>
+                            <text>Day/Night</text>
                         </div>
                         <div id="contInfoC2">
-                            <span>Region</span>
-                            <span>Area</span>
-                            <span>Local</span>
-                            <span>Room</span>
+                            <text>Region</text>
+                            <text>Area</text>
+                            <text>Local</text>
+                            <text>Room</text>
                         </div>
                         <div id="contInfoC3">
-                            <span>Health</span>
-                            <span>Energy</span>
-                            <span>Mana</span>
+                            <text>Health</text>
+                            <text>Energy</text>
+                            <text>Mana</text>
                         </div>
                     </div>
 
@@ -139,35 +142,61 @@
 
                     <div id="contIO">
                         <div id="outputMain"></div>
-                        </textarea>
                         <input id="inputMain" type="text">
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- javascript code -->
         <script>
             
-            const loginRegister = {text:"Welcome to Legend and Myth.", option1:"Login", option2:"Register"};
-            
-            var currentOptionsState = loginRegister
+            var optLogin = {text: "Login", forward: ""}
+            var optRegister = {text: "Register", forward: ""}
 
-            function printOptionsState() {
-                document.getElementById("outputMain").innerHTML += currentOptionsState.text + "<br><br>";
+            const loginOpSt = {text:"Welcome to Legend and Myth.", option1: optLogin, option2: optRegister}
+
+            const loginUsernameTxt = "Please enter your username."
+            const loginPasswordTxt = "Please enter your password."
+
+            //clears input field on enter key
+            document.addEventListener('keyup', function(event){
+                if (event.key === 'Enter' && document.getElementById("inputMain") === document.activeElement){
+                    document.getElementById("inputMain").value = ""
+                }
+            })
+
+            var curSt = loginOpSt
+
+            // prints current options state text and options
+            function printOpSt(){
+                document.getElementById("outputMain").innerHTML += curSt.text + "<br><br>"
 
                 var i = 0
-                for (x in currentOptionsState){
-                    if(i >= 1){
-                        document.getElementById("outputMain").innerHTML += i + ". ";
-                        document.getElementById("outputMain").innerHTML += currentOptionsState[x] + "<br>";
+                for (x in curSt){
+                    if (i >= 1){
+                        document.getElementById("outputMain").innerHTML += i + ". " + curSt[x].text + "<br>"
                     }
-                    i++;
+                    i++
                 }
             }
 
-            printOptionsState();
+            /*
+            get int or string from input field
+            check if input is command or option choice
+            compare input to index of chosen option
+            get chosen option's function by comparing the string
+            */
+            
+            printOpSt()
 
         </script>
 
     </body>
 </html>
+
+<!--opt: option
+    StrSt: string state
+    OpSt: options state
+    cur: current
+    st: state-->

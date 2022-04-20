@@ -14,7 +14,7 @@
 - eat + (item): Eat perishables to restore fatigue.
 - drink + (item): Drink perishables to restore fatigue.
 - rest: For restoring fatigue.
-- use + (item): For using any item in your inventory whether it's on a quest object or something like a potion for a buff.
+- use or u + (item): For using any item in your inventory whether it's on a quest object or something like a potion for a buff.
 - destroy or dst: To destroy items in your inventoryf
 - talk or tlk + (npc): To talk to the specified npc
 - say: To send chat to players in your instance

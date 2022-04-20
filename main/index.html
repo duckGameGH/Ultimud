@@ -206,7 +206,7 @@
                 let cmd = userInput.split(' ')[0]
                 let args = userInput.split(' ')[1]
                 let args2 = userInput.split(' ')[2]
-                
+                document.getElementById("outputMain").innerHTML += " <br> <br> ";
                 if(cmd == "cmds" || cmd == "help") {
                     document.getElementById("outputMain").innerHTML += "cmds/help, hail, move, harvest, explore, look, examine, attack, flee, search, who, eat, drink, rest, use, destroy, talk, say, shout, whisper, buy, sell, yes, no, equip, unequip, skill, spell"
                 }

@@ -150,7 +150,8 @@
                 <div id="contActivePane"></div>
                 <div id="contIO">   
                     <div id="outputMain"></div>                        
-                    <input id="inputMain" type="text">
+                    <input id="inputMain" type="text" name="inputMain">
+
                 </div>
             </div>
         </div>
@@ -165,7 +166,7 @@
 //                                           |_|                                 
 -->
         <script>
-
+            var harvestables = ["stone", "wood", "herb", "crop"];
             let optLogin = {text: "Login", nextSt: 'usernameStrSt'}
             let optRegister = {text: "Register", nextSt:''}
 
@@ -189,18 +190,56 @@
             }
             
             //clears input field on enter key
-            let userInput = 0
+            let userInput;
             document.addEventListener('keyup', function (event){
                 if (event.key === 'Enter' && document.getElementById("inputMain") === document.activeElement){
                     userInput = document.getElementById("inputMain").value
                     document.getElementById("inputMain").value = ""
-
-                    if (! isNaN(userInput)){
-                        parseInt(userInput)
-                        document.getElementById("outputMain").innerHTML += userInput
-                    }
+                    commandMain();
+                    
                 }
             })
+
+            //retrieve data from input field and call comamnd function if needed
+            //i will later do functions for each command but for now i just make them say something.
+            function commandMain(){
+                let cmd = userInput.split(' ')[0]
+                let args = userInput.split(' ')[1]
+                let args2 = userInput.split(' ')[2]
+                
+                if(cmd == "cmds" || cmd == "help") {
+                    document.getElementById("outputMain").innerHTML += "cmds/help, hail, move, harvest, explore, look, examine, attack, flee, search, who, eat, drink, rest, use, destroy, talk, say, shout, whisper, buy, sell, yes, no, equip, unequip, skill, spell"
+                }
+
+                if(cmd == "hail") {
+                    document.getElementById("outputMain").innerHTML += "Hail, " + args;
+                }
+
+                if(cmd == "move" || cmd == "mov") {
+                    document.getElementById("outputMain").innerHTML += "You have moved to the room number " + args; //"of the region " + currentRegion;
+                }
+
+                if(cmd == "harvest" || cmd == "hvs") {
+                    var doesExist = harvestables.includes(args);
+                    if(args2 > 1) {
+                         args += "s"
+                    }
+                    if(doesExist == true) {
+                    document.getElementById("outputMain").innerHTML += "You have harvested " + args2 + " " + args;}
+                    else {
+                    document.getElementById("outputMain").innerHTML += "This element does not exist."
+                    }
+                }
+                
+                if(cmd == "look") {
+                    document.getElementById("outputMain").innerHTML += "You look around and see a stone"; //later replace the stone by a "nearByElements" or something like that
+                }
+
+                if(cmd == "examine" || cmd == "exm") {
+                    document.getElementById("outputMain").innerHTML += "You examine the " + args + " and you notice that it has a sword in it's back."; //same as above
+                }
+                
+            }
             
             printOpSt()
 

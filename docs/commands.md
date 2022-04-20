@@ -1,6 +1,7 @@
 # Commands:
 
 - cmds: Lists all game commands
+- help: Lists all game commands
 - hail + (target): Sends a simple "Hail, (target)!" to the instance chat.
 - move or mov + (number): The available rooms will be listed with index.
 - harvest or hvs + (object): Get raw material like stone, wood, herbs, and crops from the related object nearby

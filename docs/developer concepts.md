@@ -19,6 +19,6 @@
 - there will be ASCII maps which can be loaded, but they are not navigated, just used as a reference for direction
 
 ## Battle:
-- Attacking an enemy turns on automatic attack, so you only have to type it once.
+- Attacking an enemy turns on automatic attack, so you only have to type the command once. Attack is performed by typing 'atk' + (index of enemy), so for example 'atk 1' or 'atk 3'.
 - once a player or their group engages into a battle, the output box blocks any activity feed unrelated to that battle, as to not get lost in what's happening in the fight
 - battles are private so once you engage an enemy, that enemy is no longer shown or available to anyone in the room, unless they are in your group

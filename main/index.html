@@ -15,7 +15,7 @@
 //                 
  -->
         <style>
-            #contMain{
+            #main{
                 background-image: linear-gradient(grey, black);
                 display: flex;
                 position: fixed;
@@ -27,7 +27,7 @@
                 height: 100%;
             }
 
-            #contBanner{
+            #banner{
                 background-image: radial-gradient(grey, black);
                 position: fixed;
                 top: 0px;
@@ -38,7 +38,7 @@
                 width: 100%;
             }
 
-            #contGame{
+            #game{
                 background-color: grey;
                 display: flex;
                 flex-direction: column;
@@ -48,24 +48,39 @@
                 max-height: 700px;
             }
 
-            #contInfo{
+            #info{
                 background-color: grey;
                 display: flex;
                 flex-direction: row;
-                color: black;
-                height: 150px;
+                height: 200px;
                 box-sizing: border-box;
                 border: 1px solid black;
             }
 
-            #contActivePane{
+            #active{
                 display: flex;
                 height: 100%;
                 box-sizing: border-box;
                 border: 1px solid black;
             }
 
-            #contIO{
+            #room{
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+            }
+
+            #paths{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            #objects{}
+            #players{}
+            #enemies{}
+
+            #io{
                 display: flex;
                 flex-direction: column;
                 height: 100%;
@@ -73,7 +88,7 @@
                 border: 1px solid black;
             }
             
-            #outputMain{
+            #output{
                 background-color: rgb(35, 35, 35);
                 height: 100%;
                 max-height: 286px;
@@ -83,14 +98,14 @@
                 overflow-y: auto;
             }
 
-            #inputMain{
+            #input{
                 background-color: rgb(35, 35, 35);
                 color: white;
                 border: 1px solid grey;
                 font-size: 18px;
             }
 
-            #contInfoC1{
+            #info1{
                 display: flex;
                 flex-direction: column;
                 width: 100%;
@@ -98,7 +113,7 @@
                 text-align: center;
             }
 
-            #contInfoC2{
+            #info2{
                 display: flex;
                 flex-direction: column;
                 width: 100%;
@@ -106,12 +121,18 @@
                 text-align: center;
             }
 
-            #contInfoC3{
+            #info3{
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 height: 100%;
                 text-align: center;
+            }
+
+            p {
+                margin: 0px;
+                padding: 0px;
+                color: black;
             }
         </style>
     </head>
@@ -126,31 +147,65 @@
 //                                                          
 -->
     <body>
-        <div id="contMain">
-            <div id="contBanner">Legend & Myth</div>
-            <div id="contGame">
-                <div id="contInfo">
-                    <div id="contInfoC1">
-                        <text>Year</text>
-                        <text>Month</text>
-                        <text>Day/Night</text>
+        <div id="main">
+            <div id="banner">Legend & Myth</div>
+            <div id="game">
+                <div id="info">
+                    <div id="info1">
+                        <p>Name</p>
+                        <p>Level</p>
+                        <p>Health</p>
+                        <p>Energy</p>
+                        <p>Mana</p>
+                        <p>Fatigue</p>
                     </div>
-                    <div id="contInfoC2">
-                        <text>Region</text>
-                        <text>Area</text>
-                        <text>Local</text>
-                        <text>Room</text>
+                    <div id="info2">
+                        <p>Region</p>
+                        <p>Area</p>
+                        <p>Local</p>
+                        <p>Room</p>
                     </div>
-                    <div id="contInfoC3">
-                        <text>Health</text>
-                        <text>Energy</text>
-                        <text>Mana</text>
+                    <div id="info3">
+                        <p>Year</p>
+                        <p>Month</p>
+                        <p>Day/Night</p>
                     </div>
                 </div>
-                <div id="contActivePane"></div>
-                <div id="contIO">   
-                    <div id="outputMain"></div>                        
-                    <input id="inputMain" type="text">
+                <div id="active">
+                    <div id="room">
+                        <div id="paths">
+                            <p>Paths:</p>
+                            <p>Cellar</p>
+                            <p>Residential District</p>
+                            <p>Shopkeeper's Bedroom</p>
+                        </div>
+                        <div id="players">
+                            <p>Players:</p>
+                            <p>Player25</p>
+                            <p>Player38</p>
+                            <p>Player5</p>
+                        </div>
+                        <div id="enemies">
+                            <p>Enemies:</p>
+                            <p>Skeleton</p>
+                            <p>Feral Wolf</p>
+                            <p>Bandit</p>
+                        </div>
+                        <div id="objects">
+                            <p>Objects:</p>
+                            <p>Statue</p>
+                            <p>Book</p>
+                            <p>Shoe</p>
+                        </div>
+                    </div>
+                    <div id="dialogue"></div>
+                    <div id="shop"></div>
+
+
+                </div>
+                <div id="io">   
+                    <div id="output"></div>                        
+                    <input id="input" type="text">
                 </div>
             </div>
         </div>
@@ -165,7 +220,6 @@
 //                                           |_|                                 
 -->
         <script>
-
             let optLogin = {text: "Login", nextSt: 'usernameStrSt'}
             let optRegister = {text: "Register", nextSt:''}
 
@@ -179,11 +233,11 @@
             // prints current options state text and options
             let curSt = loginOpSt
             function printOpSt(){
-                document.getElementById("outputMain").innerHTML += `${curSt.text} <br><br>`
+                document.getElementById("output").innerHTML += `${curSt.text} <br><br>`
 
                 let i = 1
                 for (x in curSt.options){
-                        document.getElementById("outputMain").innerHTML += `${i}. ${dataMap[curSt["options"][x]].text}<br>`
+                        document.getElementById("output").innerHTML += `${i}. ${dataMap[curSt["options"][x]].text}<br>`
                         i++
                 }
             }
@@ -191,19 +245,18 @@
             //clears input field on enter key
             let userInput = 0
             document.addEventListener('keyup', function (event){
-                if (event.key === 'Enter' && document.getElementById("inputMain") === document.activeElement){
-                    userInput = document.getElementById("inputMain").value
-                    document.getElementById("inputMain").value = ""
+                if (event.key === 'Enter' && document.getElementById("input") === document.activeElement){
+                    userInput = document.getElementById("input").value
+                    document.getElementById("input").value = ""
 
                     if (! isNaN(userInput)){
                         parseInt(userInput)
-                        document.getElementById("outputMain").innerHTML += userInput
+                        document.getElementById("output").innerHTML += userInput
                     }
                 }
             })
             
             printOpSt()
-
         </script>
     </body>
 </html>

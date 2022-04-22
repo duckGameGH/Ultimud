@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <title>Legend & Myth</title>
 <!--
 //     _____  _____ _____    _____          _      
@@ -80,7 +81,8 @@
                 color: white;
                 border: 1px solid grey;
                 word-wrap: break-word;
-                overflow-y: auto;
+                overflow-y: scroll;
+                
             }
 
             #inputMain{
@@ -168,6 +170,8 @@
         <script>
             var harvestables = ["stone", "wood", "herb", "crop"]; //definitely needs an upgrade
             var nearbyCreatures = [];
+           
+            
             var status = 0; //0 is for idle 1 is for combat
             var mob = 0;
             let optLogin = {text: "Login", nextSt: 'usernameStrSt'}
@@ -205,7 +209,7 @@
 
             //retrieve data from input field and call comamnd function if needed
             //i will later do functions for each command but for now i just make them say something.
-            function commandMain(){
+            function commandMain(){               
                 let cmd = userInput.split(' ')[0]
                 let args = userInput.split(' ')[1]
                 let args2 = userInput.split(' ')[2]
@@ -269,7 +273,12 @@
                     }
 
                 }
-            }
+                 }
+
+                if(cmd == "lipsum") {
+                    document.getElementById("outputMain").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat velit. Etiam rhoncus diam eu ullamcorper commodo. Maecenas cursus id dolor non imperdiet. Nullam mattis rhoncus metus. Aenean congue rhoncus tristique. Nulla ultricies felis mauris, ac varius ante luctus lobortis. Duis est sem, varius ac dui sollicitudin, euismod interdum nisi. Curabitur ac arcu vitae quam consectetur tempor. Vestibulum neque turpis, dapibus vel ex non, pharetra elementum ante. Morbi eget augue iaculis, tristique ipsum non, blandit nibh. Donec finibus dolor ut est facilisis, ac finibus nisi elementum. Nullam scelerisque consectetur massa. Proin a convallis tortor. Quisque sed condimentum mauris. Nullam vestibulum pellentesque augue, quis gravida orci semper eu. Pellentesque dui dolor, tincidunt nec vulputate eu, congue tristique lectus. Aenean facilisis sagittis lacinia. Sed tempor semper mauris. Curabitur a risus iaculis, porta arcu vitae, congue ligula. Curabitur urna tellus, efficitur eget hendrerit sed, egestas eget dui. Integer ut purus ut justo rhoncus consectetur eget at sem. Integer porta risus elit, in blandit felis sagittis ac."
+                }
+                $('#outputMain').scrollTop($('#outputMain')[0].scrollHeight);
                 
             }
             

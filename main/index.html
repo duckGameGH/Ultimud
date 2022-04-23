@@ -15,106 +15,92 @@
 //                                                 
 //                 
  -->
-        <style>
-            #contMain{
-                background-image: linear-gradient(grey, black);
-                display: flex;
-                position: fixed;
-                justify-content: center;
-                align-items: center;
-                left: 0px;
-                top: 0px;
-                width: 100%;
-                height: 100%;
-            }
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
 
-            #contBanner{
-                background-image: radial-gradient(grey, black);
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                color: rgb(0, 255, 0);
-                font-size: 40px;
-                text-align: center;
-                width: 100%;
-            }
 
-            #contGame{
-                background-color: grey;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                width: 100%;
-                max-width: 700px;
-                max-height: 700px;
-            }
 
-            #contInfo{
-                background-color: grey;
-                display: flex;
-                flex-direction: row;
-                color: black;
-                height: 150px;
-                box-sizing: border-box;
-                border: 1px solid black;
-            }
+    <style>
 
-            #contActivePane{
-                display: flex;
-                height: 100%;
-                box-sizing: border-box;
-                border: 1px solid black;
-            }
+        #main{
+            background-image: linear-gradient(grey, black);
+            display: flex;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
 
-            #contIO{
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                box-sizing: border-box;
-                border: 1px solid black;
-            }
-            
-            #outputMain{
-                background-color: rgb(35, 35, 35);
-                height: 100%;
-                max-height: 286px;
-                color: white;
-                border: 1px solid grey;
-                word-wrap: break-word;
-                overflow-y: scroll;
-                
-            }
+        #body{
+            background-color: rgb(39, 39, 39);
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 700px;
+            box-sizing: border-box;
+            border: 1px solid grey;
+        }
 
-            #inputMain{
-                background-color: rgb(35, 35, 35);
-                color: white;
-                border: 1px solid grey;
-                font-size: 18px;
-            }
+        #info{
+            max-height: 80px;
+        }
 
-            #contInfoC1{
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-            }
+        #room{
+            display: none;
+        }
+        
+        #battle{
+            display: none;
+        }
 
-            #contInfoC2{
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-            }
+        #dialogue{
+            display: flex;
+        }
 
-            #contInfoC3{
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-            }
+        #store{
+            display: none;
+        }
+
+        #input{
+            background: transparent;
+            color: white;
+        }
+
+        .contRow{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid grey;
+        }
+
+        .contColumn{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid grey;
+        }
+
+        .cont{
+            display: block;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid grey;}
+
+        p{
+            padding: 0%;
+            margin: 0%;
+            color: white;
+        }
         </style>
     </head>
 <!--
@@ -127,36 +113,108 @@
 //                                                          
 //                                                          
 -->
-    <body>
-        <div id="contMain">
-            <div id="contBanner">Legend & Myth</div>
-            <div id="contGame">
-                <div id="contInfo">
-                    <div id="contInfoC1">
-                        <text>Year</text>
-                        <text>Month</text>
-                        <text>Day/Night</text>
-                    </div>
-                    <div id="contInfoC2">
-                        <text>Region</text>
-                        <text>Area</text>
-                        <text>Local</text>
-                        <text>Room</text>
-                    </div>
-                    <div id="contInfoC3">
-                        <text>Health</text>
-                        <text>Energy</text>
-                        <text>Mana</text>
-                    </div>
-                </div>
-                <div id="contActivePane"></div>
-                <div id="contIO">   
-                    <div id="outputMain"></div>                        
-                    <input id="inputMain" type="text" name="inputMain">
+<div id="main">
+    <div id="body" class="contColumn">
+        <p style="text-align: center;">legend and myth</p>
+        <div id="info" class="contRow">
+            <div id="infoChar" class="contColumn">
+                <p>name</p>
+                <p>level</p>
+                <p>health</p>
+            </div>
 
-                </div>
+            <div id="infoLocal" class="contColumn">
+                <p>region</p>
+                <p>area</p>
+                <p>room</p>
+            </div>
+
+            <div id="infoCalendar" class="contColumn">
+                <p>year</p>
+                <p>month</p>
+                <p>day/night</p>
             </div>
         </div>
+
+    <div id="activePane" class="cont">
+        <div id="room" class="contRow">
+            <div id="roomPaths" class="contColumn">
+                <p>Paths:</p>
+                <p><br></p>
+                <p>1. Cellar</p>
+                <p>2. Residential district</p>
+                <p>3. Shopkeeper's room</p>
+            </div>
+
+            <div id="roomPlayers" class="contColumn">
+                <p>Players:</p>
+                <p><br></p>
+                <p>1. Player2</p>
+                <p>2. Player3</p>
+                <p>3. Player4</p>
+            </div>
+
+            <div id="roomEnemies" class="contColumn">
+                <p>1. Cellar</p>
+                <p><br></p>
+                <p>2. Residential distric</p>
+                <p>3. Shopkeeper's room</p>
+            </div>
+
+            <div id="roomObjects" class="contColumn">
+                <p>Enemies:</p>
+                <p><br></p>
+                <p>1. Skeleton</p>
+                <p>2. Bandit</p>
+                <p>3. Feral wolf</p>
+            </div>
+        </div>
+
+        <div id="battle" class="contRow">
+            <div id="battlePlayers" class="contColumn">
+                <p>1. Player2</p>
+                <p>2. Player3</p>
+                <p>3. Player4</p>
+            </div>
+
+            <div id="battleEnemies" class="contColumn">
+                <p>1. Skeleton</p>
+                <p>2. Bandit</p>
+                <p>3. Feral wolf</p>
+            </div>
+        </div>
+
+        <div id="dialogue" class="contColumn">
+            <p>Game guide: Welcome to the tutorial. Are you ready?</p>
+            <p><br></p>
+            <p>1. Yes</p>
+            <p>1. No</p>
+            <p><br></p>
+            <p>Game guide: Okay, talk to me again when you are reaady.</p>
+        </div>
+
+        <div id="store" class="contRow">
+            <div id="storeNPC" class="contColumn">
+                <p>NPC's items / 300gp</p>
+                <p><br></p>
+                <p>1. Fish</p>
+                <p>2. Dagger</p>
+                <p>3. Bedroll</p>
+            </div>
+
+            <div id="storePlayer" class="contColumn">
+                <p>Player's items / 300gp</p>
+                <p><br></p>
+                <p>1. Fish</p>
+                <p>2. Dagger</p>
+                <p>3. Bedroll</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="output" class="cont">output</div>
+    <input id="input" type="text">
+</div>
 <!--
 //         _                                _       _      _____          _      
 //        | |                              (_)     | |    / ____|        | |     
@@ -185,23 +243,14 @@
                              optRegister: optRegister}
 
             // prints current options state text and options
-            let curSt = loginOpSt
-            function printOpSt(){
-                document.getElementById("outputMain").innerHTML += `${curSt.text} <br><br>`
 
-                let i = 1
-                for (x in curSt.options){
-                        document.getElementById("outputMain").innerHTML += `${i}. ${dataMap[curSt["options"][x]].text}<br>`
-                        i++
-                }
-            }
             
             //clears input field on enter key
             let userInput;
             document.addEventListener('keyup', function (event){
-                if (event.key === 'Enter' && document.getElementById("inputMain") === document.activeElement){
-                    userInput = document.getElementById("inputMain").value
-                    document.getElementById("inputMain").value = ""
+                if (event.key === 'Enter' && document.getElementById("input") === document.activeElement){
+                    userInput = document.getElementById("input").value
+                    document.getElementById("input").value = ""
                     commandMain();
                     
                 }
@@ -219,21 +268,21 @@
             //retrieve data from input field and call comamnd function if needed
             //i will later do functions for each command but for now i just make them say something.
             function commandMain(){
-                $('#outputMain').scrollTop($('#outputMain')[0].scrollHeight);
+                $('#output').scrollTop($('#output')[0].scrollHeight);
                 let cmd = userInput.split(' ')[0]
                 let args = userInput.split(' ')[1]
                 let args2 = userInput.split(' ')[2]
-                document.getElementById("outputMain").innerHTML += " <br> <br> ";
+                document.getElementById("output").innerHTML += " <br> <br> ";
                 if(cmd == "cmds" || cmd == "help") {
-                    document.getElementById("outputMain").innerHTML += ">" + "cmds/help, hail, move, harvest, explore, look, examine, attack, flee, search, who, eat, drink, rest, use, destroy, talk, say, shout, whisper, buy, sell, yes, no, equip, unequip, skill, spell"
+                    document.getElementById("output").innerHTML += ">" + "cmds/help, hail, move, harvest, explore, look, examine, attack, flee, search, who, eat, drink, rest, use, destroy, talk, say, shout, whisper, buy, sell, yes, no, equip, unequip, skill, spell"
                 }
 
                 if(cmd == "hail") {
-                    document.getElementById("outputMain").innerHTML += ">" + "Hail, " + args;
+                    document.getElementById("output").innerHTML += ">" + "Hail, " + args;
                 }
 
                 if(cmd == "move" || cmd == "mov") {
-                    document.getElementById("outputMain").innerHTML += ">" + "You have moved to the room number " + args; //"of the region " + currentRegion;
+                    document.getElementById("output").innerHTML += ">" + "You have moved to the room number " + args; //"of the region " + currentRegion;
                     nearbyCreatures.push("Orc", "Goblin"); //last 2 items are always undefined and undefined in output of look
                 }
 
@@ -243,25 +292,25 @@
                          args += "s"
                     }
                     if(doesExist == true) {
-                    document.getElementById("outputMain").innerHTML += ">" + "You have harvested " + args2 + " " + args;}
+                    document.getElementById("output").innerHTML += ">" + "You have harvested " + args2 + " " + args;}
                     else {
-                    document.getElementById("outputMain").innerHTML += ">" + "This element does not exist."
+                    document.getElementById("output").innerHTML += ">" + "This element does not exist."
                     }
                 }
                 
                 if(cmd == "look") {
-                    document.getElementById("outputMain").innerHTML += ">" + "You look around and see " + nearbyCreatures[0]; //later add a  "nearByElements" 
+                    document.getElementById("output").innerHTML += ">" + "You look around and see " + nearbyCreatures[0]; //later add a  "nearByElements" 
                     while (mob <= nearbyCreatures.length) {
                         mob += 1;
-                        document.getElementById("outputMain").innerHTML += ", " + nearbyCreatures[mob];}
+                        document.getElementById("output").innerHTML += ", " + nearbyCreatures[mob];}
                 }
 
                 if(cmd == "examine" || cmd == "exm") {
-                    document.getElementById("outputMain").innerHTML += ">" + "You examine the " + args + " and you notice that it has a sword in it's back."; //same as above
+                    document.getElementById("output").innerHTML += ">" + "You examine the " + args + " and you notice that it has a sword in it's back."; //same as above
                 }
 
                 if(cmd == "attack" || cmd =="atk") {
-                    document.getElementById("outputMain").innerHTML += ">" + "You have attacked the " + nearbyCreatures[(args - 1)];
+                    document.getElementById("output").innerHTML += ">" + "You have attacked the " + nearbyCreatures[(args - 1)];
                     var currentBattle = nearbyCreatures[args - 1];
                     status = 1;
                     
@@ -272,33 +321,33 @@
                     if(status == 1) {
                     if(currentBattle != "Goblin") {
                         if(ran == 1) {
-                        document.getElementById("outputMain").innerHTML += ">" + "You have sucessfully ran away from the " + currentBattle
+                        document.getElementById("output").innerHTML += ">" + "You have sucessfully ran away from the " + currentBattle
                         status = 0;}
                         else {
-                        document.getElementById("outputMain").innerHTML += ">" + "While trying to run away, you trip on a rock.. You have to get back to battle!" //maybe add multiple reasons of failing in a list and randomize them
+                        document.getElementById("output").innerHTML += ">" + "While trying to run away, you trip on a rock.. You have to get back to battle!" //maybe add multiple reasons of failing in a list and randomize them
                         }
                     }
                     else{
-                        document.getElementById("outputMain").innerHTML += ">" + "You cannot run away from a " + currentBattle + ". You have to get back to battle!"
+                        document.getElementById("output").innerHTML += ">" + "You cannot run away from a " + currentBattle + ". You have to get back to battle!"
                     }
 
                 }
                  }
 
                 if(cmd == "lipsum") {
-                    document.getElementById("outputMain").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat velit. Etiam rhoncus diam eu ullamcorper commodo. Maecenas cursus id dolor non imperdiet. Nullam mattis rhoncus metus. Aenean congue rhoncus tristique. Nulla ultricies felis mauris, ac varius ante luctus lobortis. Duis est sem, varius ac dui sollicitudin, euismod interdum nisi. Curabitur ac arcu vitae quam consectetur tempor. Vestibulum neque turpis, dapibus vel ex non, pharetra elementum ante. Morbi eget augue iaculis, tristique ipsum non, blandit nibh. Donec finibus dolor ut est facilisis, ac finibus nisi elementum. Nullam scelerisque consectetur massa. Proin a convallis tortor. Quisque sed condimentum mauris. Nullam vestibulum pellentesque augue, quis gravida orci semper eu. Pellentesque dui dolor, tincidunt nec vulputate eu, congue tristique lectus. Aenean facilisis sagittis lacinia. Sed tempor semper mauris. Curabitur a risus iaculis, porta arcu vitae, congue ligula. Curabitur urna tellus, efficitur eget hendrerit sed, egestas eget dui. Integer ut purus ut justo rhoncus consectetur eget at sem. Integer porta risus elit, in blandit felis sagittis ac."
+                    document.getElementById("output").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat velit. Etiam rhoncus diam eu ullamcorper commodo. Maecenas cursus id dolor non imperdiet. Nullam mattis rhoncus metus. Aenean congue rhoncus tristique. Nulla ultricies felis mauris, ac varius ante luctus lobortis. Duis est sem, varius ac dui sollicitudin, euismod interdum nisi. Curabitur ac arcu vitae quam consectetur tempor. Vestibulum neque turpis, dapibus vel ex non, pharetra elementum ante. Morbi eget augue iaculis, tristique ipsum non, blandit nibh. Donec finibus dolor ut est facilisis, ac finibus nisi elementum. Nullam scelerisque consectetur massa. Proin a convallis tortor. Quisque sed condimentum mauris. Nullam vestibulum pellentesque augue, quis gravida orci semper eu. Pellentesque dui dolor, tincidunt nec vulputate eu, congue tristique lectus. Aenean facilisis sagittis lacinia. Sed tempor semper mauris. Curabitur a risus iaculis, porta arcu vitae, congue ligula. Curabitur urna tellus, efficitur eget hendrerit sed, egestas eget dui. Integer ut purus ut justo rhoncus consectetur eget at sem. Integer porta risus elit, in blandit felis sagittis ac."
                 }
 
                 if(cmd == "say") {
-                    document.getElementById("outputMain").innerHTML +=  "username " + "@ " + removeFirstWord(userInput);
+                    document.getElementById("output").innerHTML +=  "username " + "@ " + removeFirstWord(userInput);
                 }
 
 
-                $('#outputMain').scrollTop($('#outputMain')[0].scrollHeight);
+                $('#output').scrollTop($('#output')[0].scrollHeight);
                 
             }
             
-            printOpSt()
+            
 
         </script>
     </body>
